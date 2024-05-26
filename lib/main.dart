@@ -68,6 +68,20 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     }
   }
+  Future<void> _getString() async{
+    try{
+
+      String res=await AccelerometerService.getString();
+
+      setState(() {
+        _accelerometerData = res;
+        _isButtonDisabled = false;
+      });
+    }
+    catch(e) {
+      print("Ошибка при получении данных акселерометра: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 20),
               Text('Accelerometer Data: $_accelerometerData'),
+              ElevatedButton(
+                onPressed: _isButtonDisabled ? null : _getString,
+                child: const Text('Test'),
+              ),
             ],
           ),
         ),

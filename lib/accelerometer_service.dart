@@ -8,4 +8,8 @@ class AccelerometerService {
     final Uint8List data = await platform.invokeMethod('getAccelerometerData');
     return data;
   }
+  static Future<String> getString() async{
+    final String data = await platform.invokeMethod('getString');
+    return data;
+}
 }

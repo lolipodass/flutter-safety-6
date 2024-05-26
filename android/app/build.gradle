@@ -63,7 +63,6 @@ android {
 flutter {
     source '../..'
 }
-
 dependencies {
-    implementation(files("C:/Users/joper/AndroidStudioProjects/SafetyTest2/AccelerometrHash/build/outputs/aar/AccelerometrHash-debug.aar"))
+    implementation(files("C:/android/AccelerometrHash/app/build/outputs/aar/app-debug.aar"))
 }
